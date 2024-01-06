@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 
 import 'w_opensource_item.dart';
 
+/// pubspec.yaml에서 사용한 패키지의 라이센스 정보를
+/// assets/json/licenses.json 파일 내용을 update
+///
 /// 아래의 명령어를 통해서, 주기적으로 라이센스 json을 최신화 해주세요.
+///
 /// flutter pub run flutter_oss_licenses:generate.dart -o assets/json/licenses.json --json
+///
 class OpensourceScreen extends StatefulWidget {
   const OpensourceScreen({super.key});
 
@@ -40,7 +45,7 @@ class _OpensourceScreenState extends State<OpensourceScreen> {
         itemBuilder: (context, index) => OpensourceItem(packageList[index]),
         itemCount: packageList.length,
         separatorBuilder: (BuildContext context, int index) {
-          return const Line().pSymmetric(h:20);
+          return const Line().pSymmetric(h: 20);
         },
       ),
     );
